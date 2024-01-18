@@ -41,6 +41,11 @@ const NativeSelect = styled.select`
 
   /* Make the element still clickable, but not visible */
   opacity: 0;
+
+  /* In Safari, select tags have a default height that can't be overridden with height property. */
+  /* The appearance property removes this restriction */
+  appearance: none;
+  -webkit-appearance: none;
 `;
 
 const PresentationalBit = styled.div`
