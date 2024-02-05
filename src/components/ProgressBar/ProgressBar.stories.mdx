@@ -2,7 +2,7 @@ import { Meta, Story } from '@storybook/addon-docs/blocks';
 import ProgressBar from './ProgressBar';
 
 <Meta
-  title="ProgressBar"
+  title='ProgressBar'
   component={ProgressBar}
   argTypes={{
     value: {
@@ -18,13 +18,40 @@ import ProgressBar from './ProgressBar';
         options: ['small', 'medium', 'large'],
       },
     },
+    color: {
+      control: {
+        type: 'select',
+        options: [
+          'primary',
+          'gray50',
+          'gray300',
+          'gray500',
+          'black',
+          'transparentGray15',
+          'transparentGray35',
+        ],
+      },
+    },
+    ariaLabel: {
+      control: {
+        type: 'text',
+      },
+    },
   }}
 />
 
-export const Template = (args) => <ProgressBar {...args} />;
+export const Template = args => <ProgressBar {...args} />;
 
 # ProgressBar
 
-<Story name="Default" args={{ value: 50, size: 'medium' }}>
+<Story
+  name='Default'
+  args={{
+    value: 50,
+    size: 'medium',
+    color: 'primary',
+    ariaLabel: 'Progress Bar',
+  }}
+>
   {Template.bind({})}
 </Story>
